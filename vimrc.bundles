@@ -1,0 +1,72 @@
+set nocompatible
+filetype off " required! turn off
+
+" ################### 插件管理 ###################
+
+" inspired by spf13, 自定义需要的插件集合
+if !exists('g:bundle_groups')
+    " let g:bundle_groups=['python', 'javascript', 'golang', 'php', 'ruby', 'shell', 'markdown', 'html', 'css', 'less', 'coffeescript', 'tmux', 'json', 'beta']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta']
+endif
+
+
+call plug#begin('~/.vim/bundle')
+
+Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+Plug 'Valloric/YouCompleteMe'
+
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+
+
+call plug#end()
+
+" Config for Snip
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Config for NERDTree
+map tt :NERDTreeToggle<CR>
+
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapOpenVSplit = 'v'
+let NERDTreeMapActivateNode = "i"
+let NERDTreeMapChangeRoot = "y"
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+let NERDTreeWinSize=30
+
+
+
+
+" Config for YCM
+nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap g/ :YcmCompleter GetDoc<CR>
+nnoremap gt :YcmCompleter GetType<CR>
+nnoremap gr :YcmCompleter GoToReferences<CR>
+let g:ycm_autoclose_preview_window_after_completion=0
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_use_clangd = 0
+let g:ycm_python_interpreter_path = "/home/cv/.pyenv/shims/python"
+let g:ycm_python_binary_path = "/home/cv/.pyenv/shims/python"
+let g:ycm_confirm_extra_conf = 0

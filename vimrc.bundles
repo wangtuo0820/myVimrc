@@ -22,14 +22,18 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'mattn/emmet-vim'
+" Color Preview for CSS
+Plug 'ap/vim-css-color'
 
+Plug 'kien/ctrlp.vim'
 
 call plug#end()
 
 " Config for Snip
-let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Config for NERDTree
 map tt :NERDTreeToggle<CR>
@@ -38,6 +42,8 @@ let g:NERDTreeMapOpenSplit = 's'
 let g:NERDTreeMapOpenVSplit = 'v'
 let NERDTreeMapActivateNode = "i"
 let NERDTreeMapChangeRoot = "y"
+
+let g:NERDTreeGitStatusPorcelainVersion = 1
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -70,3 +76,6 @@ let g:ycm_use_clangd = 0
 let g:ycm_python_interpreter_path = "/home/cv/.pyenv/shims/python"
 let g:ycm_python_binary_path = "/home/cv/.pyenv/shims/python"
 let g:ycm_confirm_extra_conf = 0
+
+" Config for emmet
+let g:user_emmet_leader_key = ","

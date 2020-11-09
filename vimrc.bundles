@@ -19,8 +19,12 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" 代码块
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
+" 回车选择框内文件
+Plug 'gcmt/wildfire.vim'
 
 Plug 'mattn/emmet-vim'
 " Color Preview for CSS

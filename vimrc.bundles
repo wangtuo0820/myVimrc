@@ -30,7 +30,17 @@ Plug 'mattn/emmet-vim'
 " Color Preview for CSS
 Plug 'ap/vim-css-color'
 
+" 使用ctrl+p进行查找, ctrl+f和ctrl+b选择查找模式， ctrl+d文件名或全体路径，
+" ctrl+v水平打开，Ctrl+s上下打开, ctrl+y新建文件
 Plug 'kien/ctrlp.vim'
+" gcc进行注释
+Plug 'tpope/vim-commentary'
+" 选择多行, ctrl+n查找下一个，ctrl+updown创建竖直光标
+Plug 'mg979/vim-visual-multi'
+
+" 回车选择框内文字
+Plug 'gcmt/wildfire.vim'
+
 
 call plug#end()
 

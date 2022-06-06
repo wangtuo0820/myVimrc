@@ -4,6 +4,7 @@
 cp vimrc ~/.vimrc
 cp vimrc.bundles ~/.vimrc.bundles
 cp -r autoload/ ~/.vim/
+cp -r plugged/ ~/.vim/
 cp ycm_extra_conf.py ~/.ycm_extra_conf.py
 ```
 
